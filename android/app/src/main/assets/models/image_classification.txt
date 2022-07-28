@@ -1,0 +1,10 @@
+0 Afghan hound
+1 American foxhound
+2 Bernese mountain dog
+3 Boxer
+4 Bull terrier
+5 Bulldog
+6 Collie
+7 German shepherd dog
+8 Pointer
+9 Poodle
