@@ -18,15 +18,15 @@ type RESPONSE = {
 const tflite = new Tflite()
 
 
-function ImageClassification () {
+function FruitRecognition () {
   const [fileUri, setFileUri] = useState('')
   const [result, setResult] = useState('')
 
 
   function loadModel () {
     tflite.loadModel({
-      model: 'models/mobilenet_v1_1.0_224.tflite',
-      labels: 'models/mobilenet_v1_1.0_224.txt',
+      model: 'models/fruit_recognition.tflite',
+      labels: 'models/fruit_recognition.txt',
       numThreads: 1
     },
     (error : string) => {
@@ -37,7 +37,7 @@ function ImageClassification () {
   }
 
 
-  function performImageClassification () {
+  function performFruitRecognition () {
     tflite.runModelOnImage({
       path: fileUri,
       imageMean: 128.0,
@@ -61,7 +61,7 @@ function ImageClassification () {
 
   useEffect(() => {
     if (fileUri) {
-      performImageClassification()
+      performFruitRecognition()
     }
   }, [fileUri])
 
@@ -89,4 +89,4 @@ function ImageClassification () {
 }
 
 
-export default ImageClassification
+export default FruitRecognition

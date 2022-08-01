@@ -15,6 +15,7 @@ const ES_ES : TRANSLATE = {
 
   // PAGES
 
+  FruitRecognition: 'Reconocimiento de Frutas',
   ImageClassification: 'Clasificación de Imagen'
 }
 

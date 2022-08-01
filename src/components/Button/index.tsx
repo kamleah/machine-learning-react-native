@@ -23,8 +23,8 @@ function Button ({ onPress, text, style } : iBUTTON_PROPS) {
     >
       <View
         style={[{
-          minWidth: '48%', backgroundColor: '#ff033e', borderRadius: 3,
-          paddingVertical: 16, paddingHorizontal: 48, marginBottom: 20
+          width: '100%', backgroundColor: '#ff033e', borderRadius: 3,
+          paddingVertical: 16, marginBottom: 20
         }, style]}
       >
         <Text

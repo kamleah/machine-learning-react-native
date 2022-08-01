@@ -13,5 +13,6 @@ export type TRANSLATE = {
 
   // PAGES
 
+  FruitRecognition : string,
   ImageClassification : string
 }

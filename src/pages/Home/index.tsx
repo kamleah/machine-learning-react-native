@@ -4,7 +4,7 @@ import { useBackHandler } from '@react-native-community/hooks'
 
 import PAGES, { iPAGES } from '~/pages'
 
-import { Background, Button, Title } from '~/components'
+import { Background, Button, ButtonContainer, Title } from '~/components'
 
 
 type PAGE = keyof iPAGES | null
@@ -38,9 +38,11 @@ function Home () {
       <Title text='testTflite' />
       <Title text='chooseFunction' />
 
-      { Object.keys(PAGES).map(page => (
-        <Button key={page} onPress={() => navigate(page)} text={page} />
-      )) }
+      <ButtonContainer style={{ width: '70%', maxWidth: 400 }}>
+        { Object.keys(PAGES).map(page => (
+          <Button key={page} onPress={() => navigate(page)} text={page} />
+        )) }
+      </ButtonContainer>
       </>
     )
   }
