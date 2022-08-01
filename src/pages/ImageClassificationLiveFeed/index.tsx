@@ -10,11 +10,11 @@ import { CameraNotAuthorized, Result } from '~/components'
 import OUTPUTS from './outputs.json'
 
 
-function FruitRecognitionLiveFeed ({ navigate } : iPAGES_PROPS) {
+function ImageClassificationLiveFeed ({ navigate } : iPAGES_PROPS) {
   const [output, setOutput] = useState('')
 
   const modelParams = {
-    file: 'models/fruit_recognitio_live_feed.tflite',
+    file: 'models/mobilenet_v1_1.0_224_quant.tflite',
     inputDimX: 224,
     inputDimY: 224,
     outputDim: 1001,
@@ -44,4 +44,4 @@ function FruitRecognitionLiveFeed ({ navigate } : iPAGES_PROPS) {
 }
 
 
-export default FruitRecognitionLiveFeed
+export default ImageClassificationLiveFeed

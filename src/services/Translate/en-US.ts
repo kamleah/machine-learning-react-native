@@ -20,7 +20,8 @@ const EN_US : TRANSLATE = {
   FruitRecognition: 'Fruit Recognition',
   FruitRecognitionLiveFeed: 'Fruit Recognition Live',
   Home: 'Home',
-  ImageClassification: 'Image Classification'
+  ImageClassification: 'Image Classification',
+  ImageClassificationLiveFeed: 'Image Classification Live'
 }
 
 

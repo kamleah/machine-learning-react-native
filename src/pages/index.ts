@@ -2,6 +2,7 @@ import FruitRecognition from './FruitRecognition'
 import FruitRecognitionLiveFeed from './FruitRecognitionLiveFeed'
 import { NAVIGATE } from './Home'
 import ImageClassification from './ImageClassification'
+import ImageClassificationLiveFeed from './ImageClassificationLiveFeed'
 
 
 export interface iPAGES_PROPS {
@@ -14,14 +15,16 @@ export interface iPAGES {
   [key : string] : PAGE,
   FruitRecognition : PAGE,
   FruitRecognitionLiveFeed : PAGE,
-  ImageClassification : PAGE
+  ImageClassification : PAGE,
+  ImageClassificationLiveFeed : PAGE
 }
 
 
 const PAGES : iPAGES = {
   FruitRecognition,
   FruitRecognitionLiveFeed,
-  ImageClassification
+  ImageClassification,
+  ImageClassificationLiveFeed
 }
 
 

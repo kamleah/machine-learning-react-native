@@ -20,7 +20,8 @@ const PT_BR : TRANSLATE = {
   FruitRecognition: 'Reconhecimento de Frutas',
   FruitRecognitionLiveFeed: 'Reconhecimento de Frutas Ao Vivo',
   Home: 'Home',
-  ImageClassification: 'Classificação de Imagem'
+  ImageClassification: 'Classificação de Imagem',
+  ImageClassificationLiveFeed: 'Classificação de Imagem Ao Vivo'
 }
 
 

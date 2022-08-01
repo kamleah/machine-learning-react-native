@@ -18,5 +18,6 @@ export type TRANSLATE = {
   FruitRecognition : string,
   FruitRecognitionLiveFeed : string,
   Home : string,
-  ImageClassification : string
+  ImageClassification : string,
+  ImageClassificationLiveFeed : string
 }
