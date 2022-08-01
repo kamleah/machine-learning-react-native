@@ -8,6 +8,8 @@ const ES_ES : TRANSLATE = {
   error: 'Error',
   errorLoadModel: 'Error al intentar cargar modelo de TensorFlow Lite.',
   errorProcessingTflite: 'Algo salió mal durante el procesamiento en TensorFlow Lite.',
+  needPermissionCamera: 'Necesitamos su permiso para usar la cámara de su teléfono',
+  permissionCamera: 'Permiso para usar la cámara',
   pickImagesCG: 'Elija Imágenes de la Cámara y la Galería',
   selectImage: 'Seleccionar Imagen',
   takePicture: 'Tomar Foto',
@@ -16,6 +18,8 @@ const ES_ES : TRANSLATE = {
   // PAGES
 
   FruitRecognition: 'Reconocimiento de Frutas',
+  FruitRecognitionLiveFeed: 'Reconocimiento de Frutas En Vivo',
+  Home: 'Home',
   ImageClassification: 'Clasificación de Imagen'
 }
 

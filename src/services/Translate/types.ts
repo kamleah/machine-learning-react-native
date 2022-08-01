@@ -6,6 +6,8 @@ export type TRANSLATE = {
   error : string,
   errorLoadModel : string,
   errorProcessingTflite : string,
+  needPermissionCamera : string,
+  permissionCamera : string,
   pickImagesCG : string,
   selectImage : string,
   takePicture : string,
@@ -14,5 +16,7 @@ export type TRANSLATE = {
   // PAGES
 
   FruitRecognition : string,
+  FruitRecognitionLiveFeed : string,
+  Home : string,
   ImageClassification : string
 }

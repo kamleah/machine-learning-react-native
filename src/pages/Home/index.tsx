@@ -8,6 +8,7 @@ import { Background, Button, ButtonContainer, Title } from '~/components'
 
 
 type PAGE = keyof iPAGES | null
+export type NAVIGATE = (to : PAGE) => void
 
 
 function Home () {
@@ -51,7 +52,7 @@ function Home () {
   function HandlePage () {
     if (page) {
       if (PAGES[page]) {
-        return PAGES[page]()
+        return PAGES[page]({ navigate })
       }
       else {
         return PickPage()

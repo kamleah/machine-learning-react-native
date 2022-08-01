@@ -8,6 +8,8 @@ const EN_US : TRANSLATE = {
   error: 'Error',
   errorLoadModel: 'Error trying to load TensorFlow Lite model.',
   errorProcessingTflite: 'Something went wrong while processing in TensorFlow Lite.',
+  needPermissionCamera: 'We need your permission to use your camera phone',
+  permissionCamera: 'Permission to use camera',
   pickImagesCG: 'Pick Images from Camera & Gallery',
   selectImage: 'Select Image',
   takePicture: 'Take Picture',
@@ -16,6 +18,8 @@ const EN_US : TRANSLATE = {
   // PAGES
 
   FruitRecognition: 'Fruit Recognition',
+  FruitRecognitionLiveFeed: 'Fruit Recognition Live',
+  Home: 'Home',
   ImageClassification: 'Image Classification'
 }
 
