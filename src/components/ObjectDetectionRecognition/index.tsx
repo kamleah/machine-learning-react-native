@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, useWindowDimensions, View } from 'react-native'
 
 
-export type RECOGNITION = {
+export type OBJECT_DETECTED = {
   detectedClass : string,
   confidenceInClass : number,
   rect : {
@@ -13,12 +13,12 @@ export type RECOGNITION = {
   }
 }
 
-interface iRECOGNITION_PROPS {
-  recognition : RECOGNITION[]
+interface iOBJECT_DETECTION_PROPS {
+  recognition : OBJECT_DETECTED[]
 }
 
 
-function Recognition ({ recognition } : iRECOGNITION_PROPS) {
+function ObjectDetectionRecognition ({ recognition } : iOBJECT_DETECTION_PROPS) {
   const { width, height } = useWindowDimensions()
   const isPortrait = height >= width
 
@@ -60,4 +60,4 @@ function Recognition ({ recognition } : iRECOGNITION_PROPS) {
 }
 
 
-export default Recognition
+export default ObjectDetectionRecognition

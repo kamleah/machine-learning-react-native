@@ -22,5 +22,6 @@ export type TRANSLATE = {
   ImageClassification : string,
   ImageClassificationLiveFeed : string,
   ImageSegmentation : string,
-  ObjectDetection : string
+  ObjectDetection : string,
+  PoseEstimation : string
 }

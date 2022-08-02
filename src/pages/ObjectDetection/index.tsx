@@ -5,9 +5,11 @@ import Tflite from 'tflite-react-native'
 
 import { ChooseFile, TakePicture, Translate } from '~/services'
 
-import { Button, ButtonContainer, ImagePreview, Recognition, Title } from '~/components'
+import {
+  Button, ButtonContainer, ImagePreview, ObjectDetectionRecognition, Title
+} from '~/components'
 
-import { RECOGNITION } from '~/components/Recognition'
+import { OBJECT_DETECTED } from '~/components/ObjectDetectionRecognition'
 
 
 type MODELS = {
@@ -22,7 +24,7 @@ const tflite = new Tflite()
 function ObjectDetection () {
   const [chosenModel, setChosenModel] = useState<keyof MODELS | null>(null)
   const [fileUri, setFileUri] = useState('')
-  const [recognition, setRecognition] = useState<RECOGNITION[]>([])
+  const [recognition, setRecognition] = useState<OBJECT_DETECTED[] | null>(null)
 
 
   const loadModel : MODELS = {
@@ -58,7 +60,7 @@ function ObjectDetection () {
         threshold: 0.3,
         numResultsPerClass: 2
       },
-      (error : string, response : RECOGNITION[]) => {
+      (error : string, response : OBJECT_DETECTED[]) => {
         if (error) {
           Alert.alert(Translate('error'), Translate('errorProcessingTflite'))
           return
@@ -73,7 +75,7 @@ function ObjectDetection () {
         threshold: 0.3,
         numResultsPerClass: 2
       },
-      (error : string, response : RECOGNITION[]) => {
+      (error : string, response : OBJECT_DETECTED[]) => {
         if (error) {
           Alert.alert(Translate('error'), Translate('errorProcessingTflite'))
           return
@@ -134,7 +136,7 @@ function ObjectDetection () {
     <Title text='pickImagesCG' />
     <ImagePreview uri={fileUri}>
       { /* @ts-ignore */ recognition && (
-        <Recognition recognition={recognition} />
+        <ObjectDetectionRecognition recognition={recognition} />
       ) }
     </ImagePreview>
     <ButtonContainer style={{ width: '60%', maxWidth: 300 }}>

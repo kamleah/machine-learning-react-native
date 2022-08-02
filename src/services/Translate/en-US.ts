@@ -24,7 +24,8 @@ const EN_US : TRANSLATE = {
   ImageClassification: 'Image Classification',
   ImageClassificationLiveFeed: 'Image Classification Live',
   ImageSegmentation: 'Image Segmentation',
-  ObjectDetection: 'Object Detection'
+  ObjectDetection: 'Object Detection',
+  PoseEstimation: 'Pose Estimation'
 }
 
 

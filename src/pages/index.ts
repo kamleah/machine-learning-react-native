@@ -5,6 +5,7 @@ import ImageClassification from './ImageClassification'
 import ImageClassificationLiveFeed from './ImageClassificationLiveFeed'
 import ImageSegmentation from './ImageSegmentation'
 import ObjectDetection from './ObjectDetection'
+import PoseEstimation from './PoseEstimation'
 
 
 export interface iPAGES_PROPS {
@@ -20,7 +21,8 @@ export interface iPAGES {
   ImageClassification : PAGE,
   ImageClassificationLiveFeed : PAGE,
   ImageSegmentation : PAGE,
-  ObjectDetection : PAGE
+  ObjectDetection : PAGE,
+  PoseEstimation : PAGE
 }
 
 
@@ -30,7 +32,8 @@ const PAGES : iPAGES = {
   ImageClassification,
   ImageClassificationLiveFeed,
   ImageSegmentation,
-  ObjectDetection
+  ObjectDetection,
+  PoseEstimation
 }
 
 
