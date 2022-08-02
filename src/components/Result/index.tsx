@@ -13,7 +13,7 @@ function Result ({ result, style } : iRESULT_PROPS) {
     <Text
       style={[{
         color: '#fff', fontSize: 18, lineHeight: 26,
-        textAlign: 'center', marginVertical: 40
+        textAlign: 'center', marginTop: 20, marginBottom: 40
       }, style]}
     >
       { result }

@@ -79,7 +79,9 @@ function FruitRecognition () {
     <>
     <Title text='pickImagesCG' />
     <ImagePreview uri={fileUri} />
-    <Result result={result} />
+    { result && (
+      <Result result={result} />
+    ) }
     <ButtonContainer style={{ width: '60%', maxWidth: 300 }}>
       <Button onPress={() => ChooseFile(setFileUri)} text='chooseFile' />
       <Button onPress={() => TakePicture(setFileUri)} text='takePicture' />

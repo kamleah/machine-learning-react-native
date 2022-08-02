@@ -1,32 +1,25 @@
 import React, { useState, useEffect } from 'react'
-import { Alert } from 'react-native'
+import { Alert, Image } from 'react-native'
 // @ts-ignore
 import Tflite from 'tflite-react-native'
 
 import { ChooseFile, TakePicture, Translate } from '~/services'
 
-import { Button, ButtonContainer, ImagePreview, Result, Title } from '~/components'
-
-
-type RESPONSE = {
-  confidence : number,
-  index : number,
-  label : string
-}
+import { Button, ButtonContainer, ImagePreview, Title } from '~/components'
 
 
 const tflite = new Tflite()
 
 
-function ImageClassification () {
+function ImageSegmentation () {
   const [fileUri, setFileUri] = useState('')
-  const [result, setResult] = useState('')
+  const [recognitions, setRecognitions] = useState('')
 
 
   function loadModel () {
     tflite.loadModel({
-      model: 'models/mobilenet_v1_1.0_224.tflite',
-      labels: 'models/mobilenet_v1_1.0_224.txt',
+      model: 'models/deeplabv3_257_mv_gpu.tflite',
+      labels: 'models/deeplabv3_257_mv_gpu.txt',
       numThreads: 1
     },
     (error : string) => {
@@ -37,31 +30,26 @@ function ImageClassification () {
   }
 
 
-  function performImageClassification () {
-    tflite.runModelOnImage({
+  function performImageSegmentation () {
+    tflite.runSegmentationOnImage({
       path: fileUri,
-      imageMean: 128.0,
-      imageStd: 128.0,
-      numResults: 3,
-      threshold: 0.05
+      imageMean: 127.5,
+      imageStd: 127.5,
+      outputType: 'png'
     },
-    (error : string, response : RESPONSE[]) => {
+    (error : string, response : string) => {
       if (error) {
         Alert.alert(Translate('error'), Translate('errorProcessingTflite'))
         return
       }
-      let result = ''
-      response.map(({ confidence, label }) => {
-        result += label.toUpperCase() + ' - ' + (confidence * 100).toFixed(0) + '%\n'
-      })
-      setResult(result)
+      setRecognitions(response)
     })
   }
 
 
   useEffect(() => {
     if (fileUri) {
-      performImageClassification()
+      performImageSegmentation()
     }
   }, [fileUri])
 
@@ -78,10 +66,18 @@ function ImageClassification () {
   return (
     <>
     <Title text='pickImagesCG' />
-    <ImagePreview uri={fileUri} />
-    { result && (
-      <Result result={result} />
-    ) }
+    <ImagePreview uri={fileUri}>
+      { /* @ts-ignore */ }
+      { recognitions && (
+        <Image
+          source={{ uri: 'data:image/png;base64,' + recognitions }}
+          style={{
+            resizeMode: 'contain', width: '96%', height: '96%',
+            position: 'absolute', opacity: 0.5
+          }}
+        />
+      ) }
+    </ImagePreview>
     <ButtonContainer style={{ width: '60%', maxWidth: 300 }}>
       <Button onPress={() => ChooseFile(setFileUri)} text='chooseFile' />
       <Button onPress={() => TakePicture(setFileUri)} text='takePicture' />
@@ -91,4 +87,4 @@ function ImageClassification () {
 }
 
 
-export default ImageClassification
+export default ImageSegmentation
