@@ -5,6 +5,7 @@ const PT_BR : TRANSLATE = {
   appName: 'Guia Prático de Aprendizado de Máquina React Native',
   chooseFile: 'Escolher Arquivo',
   chooseFunction: 'Escolha uma função:',
+  chooseModel: 'Escolha um modelo:',
   error: 'Erro',
   errorLoadModel: 'Erro ao tentar carregar modelo do TensorFlow Lite.',
   errorProcessingTflite: 'Algo deu errado durante o processamento no TensorFlow Lite.',
@@ -22,7 +23,8 @@ const PT_BR : TRANSLATE = {
   Home: 'Home',
   ImageClassification: 'Classificação de Imagem',
   ImageClassificationLiveFeed: 'Classificação de Imagem Ao Vivo',
-  ImageSegmentation: 'Segmentação de Imagem'
+  ImageSegmentation: 'Segmentação de Imagem',
+  ObjectDetection: 'Detecção de Objetos'
 }
 
 

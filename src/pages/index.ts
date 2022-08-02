@@ -4,6 +4,7 @@ import { NAVIGATE } from './Home'
 import ImageClassification from './ImageClassification'
 import ImageClassificationLiveFeed from './ImageClassificationLiveFeed'
 import ImageSegmentation from './ImageSegmentation'
+import ObjectDetection from './ObjectDetection'
 
 
 export interface iPAGES_PROPS {
@@ -18,7 +19,8 @@ export interface iPAGES {
   FruitRecognitionLiveFeed : PAGE,
   ImageClassification : PAGE,
   ImageClassificationLiveFeed : PAGE,
-  ImageSegmentation : PAGE
+  ImageSegmentation : PAGE,
+  ObjectDetection : PAGE
 }
 
 
@@ -27,7 +29,8 @@ const PAGES : iPAGES = {
   FruitRecognitionLiveFeed,
   ImageClassification,
   ImageClassificationLiveFeed,
-  ImageSegmentation
+  ImageSegmentation,
+  ObjectDetection
 }
 
 

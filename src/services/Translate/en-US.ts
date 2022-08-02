@@ -5,6 +5,7 @@ const EN_US : TRANSLATE = {
   appName: 'Machine Learning React Native Practical Guide',
   chooseFile: 'Choose File',
   chooseFunction: 'Choose a function:',
+  chooseModel: 'Choose a model:',
   error: 'Error',
   errorLoadModel: 'Error trying to load TensorFlow Lite model.',
   errorProcessingTflite: 'Something went wrong while processing in TensorFlow Lite.',
@@ -22,7 +23,8 @@ const EN_US : TRANSLATE = {
   Home: 'Home',
   ImageClassification: 'Image Classification',
   ImageClassificationLiveFeed: 'Image Classification Live',
-  ImageSegmentation: 'Image Segmentation'
+  ImageSegmentation: 'Image Segmentation',
+  ObjectDetection: 'Object Detection'
 }
 
 

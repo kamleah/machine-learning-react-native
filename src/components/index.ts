@@ -3,6 +3,7 @@ import Button from './Button'
 import ButtonContainer from './ButtonContainer'
 import CameraNotAuthorized from './CameraNotAuthorized'
 import ImagePreview from './ImagePreview'
+import Recognition from './Recognition'
 import Result from './Result'
 import Title from './Title'
 
@@ -13,6 +14,7 @@ export {
   ButtonContainer,
   CameraNotAuthorized,
   ImagePreview,
+  Recognition,
   Result,
   Title
 }

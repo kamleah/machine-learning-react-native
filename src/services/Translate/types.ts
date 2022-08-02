@@ -3,6 +3,7 @@ export type TRANSLATE = {
   appName : string,
   chooseFile : string,
   chooseFunction : string,
+  chooseModel : string,
   error : string,
   errorLoadModel : string,
   errorProcessingTflite : string,
@@ -20,5 +21,6 @@ export type TRANSLATE = {
   Home : string,
   ImageClassification : string,
   ImageClassificationLiveFeed : string,
-  ImageSegmentation : string
+  ImageSegmentation : string,
+  ObjectDetection : string
 }

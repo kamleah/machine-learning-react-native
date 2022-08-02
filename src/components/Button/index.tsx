@@ -11,11 +11,12 @@ import { TRANSLATE } from '~/services/Translate/types'
 interface iBUTTON_PROPS {
   onPress : (event : GestureResponderEvent) => void,
   style ?: StyleProp<ViewStyle>,
-  text : keyof TRANSLATE
+  text : keyof TRANSLATE,
+  translate ?: boolean
 }
 
 
-function Button ({ onPress, text, style } : iBUTTON_PROPS) {
+function Button ({ onPress, text, style, translate = true } : iBUTTON_PROPS) {
   return (
     <TouchableOpacity
       activeOpacity={0.6}
@@ -33,7 +34,7 @@ function Button ({ onPress, text, style } : iBUTTON_PROPS) {
             textAlign: 'center'
           }}
         >
-          { Translate(text) }
+          { translate ? Translate(text) : text }
         </Text>
       </View>
     </TouchableOpacity>
