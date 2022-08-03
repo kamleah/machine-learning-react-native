@@ -24,8 +24,9 @@ function Button ({ onPress, text, style, translate = true } : iBUTTON_PROPS) {
     >
       <View
         style={[{
-          width: '100%', backgroundColor: '#ff033e', borderRadius: 3,
-          paddingVertical: 16, marginBottom: 20
+          width: '100%', alignItems: 'center', justifyContent: 'center',
+          backgroundColor: '#ff033e', borderRadius: 3, paddingVertical: 16,
+          marginBottom: 20
         }, style]}
       >
         <Text

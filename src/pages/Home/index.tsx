@@ -1,10 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { Animated, Easing, ScrollView } from 'react-native'
+import {
+  Animated, Easing, Image, Linking,
+  ScrollView, TouchableWithoutFeedback, useWindowDimensions, View
+} from 'react-native'
 import { useBackHandler } from '@react-native-community/hooks'
+
+import { useKastorCode } from '~/hooks'
 
 import PAGES, { iPAGES } from '~/pages'
 
 import { Background, Button, ButtonContainer, Title } from '~/components'
+
+import KASTORCODE_LOGO from '~/assets/images/kastorCodeLogo.png'
+
+import LOGO from '~/assets/images/logo.png'
 
 
 type PAGE = keyof iPAGES | null
@@ -34,15 +43,62 @@ function Home () {
 
 
   function PickPage () {
+    const { height } = useWindowDimensions()
+    const KastorCode = useKastorCode()
+
+
     return (
       <>
-      <Title text='testTflite' />
-      <Title text='chooseFunction' />
+      { KastorCode.show && <KastorCode.Component /> }
 
-      <ButtonContainer style={{ width: '70%', maxWidth: 400 }}>
-        { Object.keys(PAGES).map(page => (
-          <Button key={page} onPress={() => navigate(page)} text={page} />
-        )) }
+      <View
+        style={{
+          width: '100%', minHeight: height, alignItems: 'center',
+          justifyContent: 'flex-start'
+        }}
+      >
+        <TouchableWithoutFeedback
+          onPress={KastorCode.runAnimations}
+        >
+          <Image
+            source={LOGO}
+            style={{ resizeMode: 'contain', height: 64, marginBottom: 32 }}
+          />
+        </TouchableWithoutFeedback>
+
+        <Title text='testTflite' />
+        <Title text='chooseFunction' />
+
+        <ButtonContainer style={{ width: '70%', maxWidth: 400 }}>
+          { Object.keys(PAGES).map(page => (
+            <Button key={page} onPress={() => navigate(page)} text={page} />
+          )) }
+        </ButtonContainer>
+      </View>
+
+      <ButtonContainer
+        style={{
+          width: '80%', maxWidth: 400, flexDirection: 'row',
+          alignItems: 'center', justifyContent: 'space-between', marginVertical: 20
+        }}
+      >
+        <Button
+          onPress={() => Linking.openURL('https://github.com/kastorcode')}
+          text='GitHub'
+          translate={false}
+          style={{ paddingHorizontal: 32, marginBottom: 0 }}
+        />
+
+        <TouchableWithoutFeedback
+          onPress={KastorCode.runAnimations}
+        >
+          <Image
+            source={KASTORCODE_LOGO}
+            // @ts-ignore
+            tintColor='#ff033e'
+            style={{ resizeMode: 'contain', width: 77, height: 64 }}
+          />
+        </TouchableWithoutFeedback>
       </ButtonContainer>
       </>
     )
